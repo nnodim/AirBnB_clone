@@ -37,10 +37,9 @@ class FileStorage:
     def reload(self):
         """Type method reaload"""
         if os.path.exists(FileStorage.__file_path):
-            with open(FileStorage.__file_path) as f:
+            with open(FileStorage.__file_path, 'r') as f:
                 obj_dict = json.load(f)
                 for obj in obj_dict.values():
                     cls_d = obj["__class__"]
                     del obj["__class__"]
                     self.new(eval(cls_d)(**obj))
-            return

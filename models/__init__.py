@@ -1,5 +1,6 @@
-#!/usr/bin/env python3
-from models.machine.file_storage import FileStorage
+#!/usr/bin/python3
+from models.engine.file_storage import FileStorage
+"""import filestorage to handle data"""
 
 storage = FileStorage()
 storage.reload()
