@@ -21,8 +21,14 @@ AirBnB data
 
 class HBNBCommand(cmd.Cmd):
     """Type class ABNBCommand CLI"""
+<<<<<<< HEAD
     intro = "***AirBnB console interface, Version[1.1]: type (help or ?) to view options***"
     prompt = '(Hbnb)... '
+=======
+    intro = "***AirBnB console interface, Version[1.10]: \
+        type help to show all options***"
+    prompt = '(Abnb)... '
+>>>>>>> 53c58715faf9d9ac22fbc8d0e46d5e10e4567c47
     __classes = {
         'BaseModel',
         'Amenity',
@@ -200,4 +206,8 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     HBNBCommand().cmdloop()
+=======
+    ABNBCommand().cmdloop()
+>>>>>>> 53c58715faf9d9ac22fbc8d0e46d5e10e4567c47
