@@ -19,10 +19,10 @@ AirBnB data
 """
 
 
-class ABNBCommand(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """Type class ABNBCommand CLI"""
-    intro = "***AirBnB console interface, Version[1.10]: type help to show all options***"
-    prompt = '(Abnb)... '
+    intro = "***AirBnB console interface, Version[1.1]: type (help or ?) to view options***"
+    prompt = '(Hbnb)... '
     __classes = {
         'BaseModel',
         'Amenity',
@@ -39,6 +39,7 @@ class ABNBCommand(cmd.Cmd):
 
     def do_quit(self, line):
         """Exits the shell"""
+        print("\n\n***Goodbye!***")
         return True
 
     def do_EOF(self, line):
@@ -50,7 +51,7 @@ class ABNBCommand(cmd.Cmd):
         """Type method create"""
         if not args:
             print('** class name missing **')
-        elif args not in ABNBCommand.__classes:
+        elif args not in HBNBCommand.__classes:
             print('** class doesn\'t exist **')
         else:
             cls_d = {'BaseModel': BaseModel, 'User': User, 'Amenity': Amenity,
@@ -67,7 +68,7 @@ class ABNBCommand(cmd.Cmd):
         obj_dict = storage.all()
         if len(arg) == 0:
             print("** class name missing **")
-        elif arg[0] not in ABNBCommand.__classes:
+        elif arg[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         elif len(arg) == 1:
             print("** instance id missing **")
@@ -82,7 +83,7 @@ class ABNBCommand(cmd.Cmd):
         obj_dict = storage.all()
         if len(arg) == 0:
             print("** class name missing **")
-        elif arg[0] not in ABNBCommand.__classes:
+        elif arg[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         elif len(arg) == 1:
             print("** instance id missing **")
@@ -101,7 +102,7 @@ class ABNBCommand(cmd.Cmd):
             print('{}'.format(all_obj))
         elif args:
             arg_list = args.split()
-        if args and arg_list[0] in ABNBCommand.__classes:
+        if args and arg_list[0] in HBNBCommand.__classes:
             yes = 1
             all_obj = storage.all()
             name = arg_list[0]
@@ -123,7 +124,7 @@ class ABNBCommand(cmd.Cmd):
             all_obj = storage.all()
             yes = 0
 
-        if args_[0] not in ABNBCommand.__classes:
+        if args_[0] not in HBNBCommand.__classes:
             print('** class doesn\'t exist **')
         elif len(args_) < 2:
             print('** instance id missing **')
@@ -199,4 +200,4 @@ class ABNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    ABNBCommand().cmdloop()
+    HBNBCommand().cmdloop()
