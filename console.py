@@ -21,7 +21,8 @@ AirBnB data
 
 class ABNBCommand(cmd.Cmd):
     """Type class ABNBCommand CLI"""
-    intro = "***AirBnB console interface, Version[1.10]: type help to show all options***"
+    intro = "***AirBnB console interface, Version[1.10]: \
+        type help to show all options***"
     prompt = '(Abnb)... '
     __classes = {
         'BaseModel',
