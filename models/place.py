@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from models.base_model import BaseModel
 """create class that represent placee"""
+
+
 class Place(BaseModel):
     """class place inherits from superclass BaseModel"""
     city_id = ""
